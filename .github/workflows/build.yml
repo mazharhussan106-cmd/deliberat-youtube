@@ -1,0 +1,56 @@
+name: Build debug APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+# The project lives in the deliberate/ subfolder of this repo, so every run step
+# starts there. Workflow files themselves have to stay at the repo root.
+defaults:
+  run:
+    working-directory: deliberate
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          build-root-directory: deliberate
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Run unit tests
+        run: ./gradlew :app:testDebugUnitTest
+
+      - name: Build debug APK
+        run: ./gradlew :app:assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: deliberate-debug-apk
+          path: deliberate/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-report
+          path: deliberate/app/build/reports/tests/testDebugUnitTest/
+          if-no-files-found: ignore
+
