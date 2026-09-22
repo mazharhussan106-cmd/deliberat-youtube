@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="on_surface">#FF111418</color>
+    <color name="on_surface_muted">#FF6B7280</color>
+
+    <color name="scrim">#F2000000</color>
+    <color name="on_scrim">#FFFFFFFF</color>
+    <color name="on_scrim_muted">#FFB5BCC6</color>
+
+    <color name="brand">#FF1F6FEB</color>
+    <color name="warning">#FFFF8A80</color>
+    <color name="ic_launcher_background">#FF111418</color>
+</resources>

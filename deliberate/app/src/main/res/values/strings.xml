@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deliberate</string>
+
+    <string name="landing_tagline">Search for something specific. No feed, no scroll.</string>
+    <string name="landing_footer">The Home feed and Shorts are locked. Each one needs your PIN separately, and the unlock only lasts until you close the app.</string>
+
+    <string name="search_hint">What are you looking for?</string>
+    <string name="search_button">Search YouTube</string>
+    <string name="search_empty">Type something to search for.</string>
+
+    <!-- Block wall -->
+    <string name="pin_title_home">Home feed is blocked</string>
+    <string name="pin_title_shorts">Shorts is blocked</string>
+    <string name="pin_subtitle">Enter your PIN if you really meant to go here.</string>
+    <string name="pin_hint">PIN</string>
+    <string name="pin_submit">Unlock</string>
+    <string name="pin_cancel">Go back</string>
+
+    <plurals name="pin_attempts_left">
+        <item quantity="one">Wrong PIN. %1$d try left before a timeout.</item>
+        <item quantity="other">Wrong PIN. %1$d tries left before a timeout.</item>
+    </plurals>
+    <string name="pin_locked">Too many wrong tries. Wait %1$d s.</string>
+
+    <!-- First-run setup -->
+    <string name="pin_setup_title">Set your PIN</string>
+    <string name="pin_setup_subtitle">You will need this to reach the Home feed or Shorts. Pick something you will not type on reflex.</string>
+    <string name="pin_setup_submit">Set PIN</string>
+    <string name="pin_confirm_title">Confirm your PIN</string>
+    <string name="pin_confirm_subtitle">Type it once more so a typo does not lock you out.</string>
+    <string name="pin_confirm_submit">Confirm</string>
+    <string name="pin_too_short">Use at least %1$d digits.</string>
+    <string name="pin_mismatch">Those did not match. Start again.</string>
+    <string name="pin_set_done">PIN set.</string>
+</resources>
